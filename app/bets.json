@@ -1,0 +1,277 @@
+[{
+    "id": "2461472344",
+    "bets": [{
+        "type": "Match Winner",
+        "teams": "Carolina Panthers v Baltimore Ravens",
+        "selection": "Baltimore Ravens",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Chicago Bears v New York Jets",
+        "selection": "Chicago Bears",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Cincinnati Bengals v Tampa Bay Buccaneers",
+        "selection": "Cincinnati Bengals",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Detroit Lions v Seattle Seahawks",
+        "selection": "Detroit Lions",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Kansas City Chiefs v Denver Broncos",
+        "selection": "Kansas City Chiefs",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "New York Giants v Washington Redskins",
+        "selection": "Washington Redskins",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Pittsburgh Steelers v Cleveland Browns",
+        "selection": "Pittsburgh Steelers",
+        "spread": 0.0
+    }]
+}, {
+    "id": "2461473802",
+    "bets": [{
+        "type": "Match Winner",
+        "teams": "Carolina Panthers v Baltimore Ravens",
+        "selection": "Carolina Panthers",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Chicago Bears v New York Jets",
+        "selection": "New York Jets",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Cincinnati Bengals v Tampa Bay Buccaneers",
+        "selection": "Tampa Bay Buccaneers",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Detroit Lions v Seattle Seahawks",
+        "selection": "Detroit Lions",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Kansas City Chiefs v Denver Broncos",
+        "selection": "Kansas City Chiefs",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Pittsburgh Steelers v Cleveland Browns",
+        "selection": "Pittsburgh Steelers",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "New York Giants v Washington Redskins",
+        "selection": "Washington Redskins",
+        "spread": 0.0
+    }]
+}, {
+    "id": "2448787882",
+    "bets": [{
+        "type": "Match Winner",
+        "teams": "Chicago Bears v New England Patriots",
+        "selection": "New England Patriots",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Indianapolis Colts v Buffalo Bills",
+        "selection": "Indianapolis Colts",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Jacksonville Jaguars v Houston Texans",
+        "selection": "Jacksonville Jaguars",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "New York Jets v Minnesota Vikings",
+        "selection": "Minnesota Vikings",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Philadelphia Eagles v Carolina Panthers",
+        "selection": "Philadelphia Eagles",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Tampa Bay Buccaneers v Cleveland Browns",
+        "selection": "Cleveland Browns",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Miami Dolphins v Detroit Lions",
+        "selection": "Miami Dolphins",
+        "spread": 0.0
+    }]
+}, {
+    "id": "2449030991",
+    "bets": [{
+        "type": "Match Winner",
+        "teams": "Indianapolis Colts v Buffalo Bills",
+        "selection": "Indianapolis Colts",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Chicago Bears v New England Patriots",
+        "selection": "New England Patriots",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Miami Dolphins v Detroit Lions",
+        "selection": "Detroit Lions",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Philadelphia Eagles v Carolina Panthers",
+        "selection": "Carolina Panthers",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Tampa Bay Buccaneers v Cleveland Browns",
+        "selection": "Tampa Bay Buccaneers",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "New York Jets v Minnesota Vikings",
+        "selection": "Minnesota Vikings",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Jacksonville Jaguars v Houston Texans",
+        "selection": "Jacksonville Jaguars",
+        "spread": 0.0
+    }]
+}, {
+    "id": "2448755522",
+    "bets": [{
+        "type": "Handicap",
+        "teams": "New York Jets v Minnesota Vikings",
+        "selection": "Minnesota Vikings",
+        "spread": -3.5
+    }, {
+        "type": "Handicap",
+        "teams": "Tampa Bay Buccaneers v Cleveland Browns",
+        "selection": "Cleveland Browns",
+        "spread": 3.5
+    }, {
+        "type": "Handicap",
+        "teams": "Chicago Bears v New England Patriots",
+        "selection": "New England Patriots",
+        "spread": -1.5
+    }, {
+        "type": "Handicap",
+        "teams": "Indianapolis Colts v Buffalo Bills",
+        "selection": "Indianapolis Colts",
+        "spread": -7.0
+    }, {
+        "type": "Handicap",
+        "teams": "Miami Dolphins v Detroit Lions",
+        "selection": "Miami Dolphins",
+        "spread": 3.0
+    }, {
+        "type": "Handicap",
+        "teams": "Philadelphia Eagles v Carolina Panthers",
+        "selection": "Carolina Panthers",
+        "spread": 5.5
+    }, {
+        "type": "Handicap",
+        "teams": "Jacksonville Jaguars v Houston Texans",
+        "selection": "Jacksonville Jaguars",
+        "spread": -4.0
+    }]
+}, {
+    "id": "2426301351",
+    "bets": [{
+        "type": "Handicap",
+        "teams": "Cincinnati Bengals v Miami Dolphins",
+        "selection": "Cincinnati Bengals",
+        "spread": -5.5
+    }, {
+        "type": "Handicap",
+        "teams": "Cleveland Browns v Baltimore Ravens",
+        "selection": "Cleveland Browns",
+        "spread": 3.0
+    }, {
+        "type": "Handicap",
+        "teams": "Kansas City Chiefs v Jacksonville Jaguars",
+        "selection": "Jacksonville Jaguars",
+        "spread": 3.0
+    }, {
+        "type": "Handicap",
+        "teams": "Pittsburgh Steelers v Atlanta Falcons",
+        "selection": "Pittsburgh Steelers",
+        "spread": -3.5
+    }, {
+        "type": "Handicap",
+        "teams": "New York Jets v Denver Broncos",
+        "selection": "Denver Broncos",
+        "spread": -0.5
+    }, {
+        "type": "Handicap",
+        "teams": "Carolina Panthers v New York Giants",
+        "selection": "Carolina Panthers",
+        "spread": -6.5
+    }, {
+        "type": "Handicap",
+        "teams": "Buffalo Bills v Tennessee Titans",
+        "selection": "Buffalo Bills",
+        "spread": 5.5
+    }, {
+        "type": "Handicap",
+        "teams": "Detroit Lions v Green Bay Packers",
+        "selection": "Green Bay Packers",
+        "spread": 1.0
+    }]
+}, {
+    "id": "2426296588",
+    "bets": [{
+        "type": "Match Winner",
+        "teams": "Buffalo Bills v Tennessee Titans",
+        "selection": "Tennessee Titans",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Carolina Panthers v New York Giants",
+        "selection": "Carolina Panthers",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Cincinnati Bengals v Miami Dolphins",
+        "selection": "Cincinnati Bengals",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Cleveland Browns v Baltimore Ravens",
+        "selection": "Cleveland Browns",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Detroit Lions v Green Bay Packers",
+        "selection": "Green Bay Packers",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Kansas City Chiefs v Jacksonville Jaguars",
+        "selection": "Jacksonville Jaguars",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "New York Jets v Denver Broncos",
+        "selection": "New York Jets",
+        "spread": 0.0
+    }, {
+        "type": "Match Winner",
+        "teams": "Pittsburgh Steelers v Atlanta Falcons",
+        "selection": "Pittsburgh Steelers",
+        "spread": 0.0
+    }]
+}]

@@ -1,0 +1,18 @@
+version: "3"
+services:
+  flask:
+    build: ./app
+    command: python app.py
+    ports:
+      - "5000:5000"
+  worker:
+    build: ./app
+    command: python worker.py
+    depends_on:
+        - redis
+  redis:
+    image: redis:5.0.5-alpine
+  selenium:
+    image: selenium/standalone-chrome
+    volumes:
+      - /dev/shm:/dev/shm
