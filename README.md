@@ -1,47 +1,31 @@
 # acca-tracker
 Keep track of NFL bets
 
+## Prerequisites
+Before proceeding any further make sure the following are available on the system.
+* Docker
+* docker-compose
+* Python 3.8
+
 ## Build
-Clone the repository and run `docker-compose build` to build the docker images
+Clone the repository into $HOME/projects. Then run the `install.sh` script which will setup the python dependencies and cli command.
 
 ## Deployment
-To bring the docker containers up run `docker-compose up -d`
+Navigate to the root of the project and run `docker-compose up -d` to bring up the docker containers
+
+## Setup
+Before bets can be added, both the teams and games (for current week) need to be added.
+* Run `accatracker teams` to add the teams to the database
+* Run `accatracker games` to add the current weeks games to the database
 
 ## Getting bets from SkyBet
-There are two types of accas that can be retrieved from SkyBet
-1. Open Bets
-2. Settled Bets
+To receive bets from SkyBet run `accatracker skybet`. It will then ask you to enter your username and pin. When you have done this the bets will be retrieved. Each bet will be shown for you to give it a name. When you have added names for all bets you will be ready to go.
 
-### Open Bets
-To retrieve open bets issue the following curl request
-```
-curl -X POST http://<ip_address>:5000/bets \
--H 'Content-Type: application/json; charset=utf-8' \
--d @- << EOF
+## Viewing status of bets
+To view the status of bets got to `http://<ip_address>/<year>/<week>`
+* `ip_address` is the ip address of the machine where docker is running
+* `year` is the current season for NFL e.g. 2020
+* `week` the current week e.g. 1
 
-{
-    "username": "<skybet username>",
-    "pin": "<skybet pin>"
-}
-EOF
-```
-
-### Settled Bets
-To retrieve settled bets issue the following curl request
-```
-curl -X POST http://<ip_address>:5000/bets \
--H 'Content-Type: application/json; charset=utf-8' \
--d @- << EOF
-
-{
-    "username": "<skybet username>",
-    "pin": "<skybet pin>",
-    "period": "<period>"
-}
-EOF
-```
-
-where period is the month and year specified in the YYYY-MM format e.g. 2018-10
-
-## Bet Response
-The cURL request will respond with a job id, as the actual process of getting the bets is sent off to a worker. To check if the worker has finished go to `http://<ip_address>:5000/results/<job_id>`. If the bet has been retrieved it will be displayed. However, if the bet is still processing then that reponse will be **Nay!** If the bet is not ready refresh the page every 10 seconds to keep checking
+## Updating the games
+When the games have started you need to start the game updating script which updates the database with the latest scores every 30 seconds. To start this script navigate to `$HOME/projects/acca-tracker/acca-tracker` and run `python update.py`.

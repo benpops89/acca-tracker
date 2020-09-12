@@ -6,6 +6,7 @@ import sys
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
 import re
+import time
 
 from selenium import webdriver
 from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
@@ -27,7 +28,7 @@ class SkyBet:
 
     def create(self):
         """ Create the driver """
-        
+
         self.driver = webdriver.Remote(
             command_executor='http://selenium:4444/wd/hub',
             desired_capabilities=DesiredCapabilities.CHROME
@@ -40,19 +41,19 @@ class SkyBet:
         self.driver.quit()
 
         return self
-    
+
     def login(self):
         """ Login to SkyBet """
-        
+
         self.driver.get(self.login_url)
         form = self.driver.find_element_by_xpath('//form')
         username = form.find_element_by_id('username')
         pin = form.find_element_by_id('pin')
-        
+
         username.send_keys(self.username)
         pin.send_keys(self.pin)
         form.submit()
-
+        time.sleep(2)
         session = requests.Session()
         for cookie in self.driver.get_cookies():
             session.cookies.set(cookie['name'], cookie['value'])
@@ -76,18 +77,21 @@ class SkyBet:
         }
 
         return params
-    
+
     def run(self, period=None):
         """ Get the bets """
-        
+
         if period is not None:
             params = self.get_query_string(period)
         else:
             params = {'settled': 'N'}
-        
+
         headers = {
             'Accept': 'application/json, text/javascript, */*; q=0.01',
-            'X-Requested-With': 'XMLHttpRequest'
+            'Accept-Language': 'en-GB,en;q=0.5',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+            'X-Requested-With': 'XMLHttpRequest',
+            'X-Mustache': 'true'
         }
 
         res = self.session.post(
@@ -108,21 +112,27 @@ class SkyBet:
             bets = []
             if 'Accumulator' in acca['type']:
                 bet_id = acca['betId']
-                for bet in acca['bet']['group'][0]['selections']:
-                    bet_type = bet['marketType']
-                    if bet_type == 'Handicap':
-                        spread = float(re_handicap.search(
-                            bet['handicap']
-                        ).group(1))
-                    else:
-                        spread = 0.0
-                    
-                    bets.append({
-                        'type': bet_type,
-                        'teams': bet['event'],
-                        'selection': bet['selection'],
-                        'spread': spread
-                    })
+                for selection in acca['bet']['group']:
+                    for bet in selection['selections']:
+                        bet_type = bet['marketType']
+                        if bet_type == 'Handicap':
+                            spread = float(re_handicap.search(
+                                bet['handicap']
+                            ).group(1))
+                        else:
+                            spread = 0.0
+
+                        home, visitor = bet['event'].split(' v ')
+                        bets.append({
+                            'type': bet_type,
+                            'home_team': home,
+                            'visitor_team': visitor,
+                            'selection': bet['selection'],
+                            'spread': spread,
+                            'game_time': datetime.utcfromtimestamp(
+                                bet['startTime']
+                            ).isoformat()
+                        })
                 accas.append({
                     'id': bet_id,
                     'bets': bets
@@ -132,8 +142,8 @@ class SkyBet:
 
 if __name__ == '__main__':
     import json
-    skybet = SkyBet('<username>', '<password>')
-    bets = skybet.run('2018-10')
-    
-    with open(r'skybet\bets.json', 'w') as f:
+    skybet = SkyBet('<username>', '<pin>')
+    bets = skybet.run('2019-09')
+
+    with open(r'rawbets.json', 'w') as f:
         json.dump(bets, f)
