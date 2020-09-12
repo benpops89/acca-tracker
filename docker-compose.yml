@@ -1,12 +1,12 @@
 version: "3"
 services:
   flask:
-    build: ./app
+    build: ./skybet
     command: python app.py
     ports:
       - "5000:5000"
   worker:
-    build: ./app
+    build: ./skybet
     command: python worker.py
     depends_on:
         - redis
@@ -16,3 +16,30 @@ services:
     image: selenium/standalone-chrome
     volumes:
       - /dev/shm:/dev/shm
+  graphql:
+    build: ./acca-tracker
+    command: strawberry server schema
+    environment: 
+      NEO4J_HOST: neo4j
+    ports:
+      - "8000:8000"
+    depends_on:
+      - neo4j
+  neo4j:
+    image: neo4j
+    volumes: 
+      - neo4j:/data
+    environment: 
+      NEO4J_AUTH: neo4j/SmellyRhino@89
+    ports:
+      - "7474:7474"
+      - "7687:7687"
+  web:
+    build: ./web
+    ports:
+      - "80:80"
+    depends_on: 
+      - graphql
+
+volumes: 
+  neo4j:

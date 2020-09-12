@@ -19,7 +19,7 @@ app = Flask(__name__)
 def index():
     with open(r'bets.json', 'r') as f:
         bets = json.load(f)
-    
+
     return jsonify(bets)
 
 @app.route('/bets', methods=['POST'])
@@ -32,7 +32,7 @@ def bets():
         data['pin'],
         period
     )
-    
+
     return job.id
 
 @app.route('/results/<job_key>', methods=['GET'])
@@ -46,4 +46,3 @@ def get_results(job_key):
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')
-    
