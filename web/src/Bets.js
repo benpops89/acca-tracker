@@ -14,6 +14,7 @@ const betQuery = gql`
         gameId
         betOn
         spread
+        homeBet
         netScore
       }
     }
@@ -27,7 +28,8 @@ const Bets = ({ ids }) => {
     variables: {
       week: parseInt(week),
       year: parseInt(year)
-    }
+    },
+    pollInterval: 30000
   });
 
   const { data, fetching, error } = result;

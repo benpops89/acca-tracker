@@ -11,7 +11,7 @@ const Bet = ({ bet }) => {
   if (bet) {
     const spread = (bet.spread <= 0 ? '' : '+') + bet.spread;
     const netScore = bet.homeBet ? bet.netScore : -bet.netScore;
-    const win = bet.spread > netScore;
+    const win = (netScore - spread) > 0;
     return <P win={win}>{bet.betOn} ({spread})</P>
   } else {
     return <p style={{color: "white"}}>1</p>
