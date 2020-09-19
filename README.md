@@ -6,6 +6,7 @@ Before proceeding any further make sure the following are available on the syste
 * Docker
 * docker-compose
 * Python 3.8
+* Pip3
 
 ## Build
 Clone the repository into $HOME/projects. Then run the `install.sh` script which will setup the python dependencies and cli command.
