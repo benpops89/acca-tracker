@@ -29,7 +29,7 @@ const Games = () => {
         year: parseInt(year)
       },
       requestPolicy: 'network-only',
-      pollInterval: 30000
+      pollInterval: 2000
   });
 
   const { data, fetching, error } = result;
