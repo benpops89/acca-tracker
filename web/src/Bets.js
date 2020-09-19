@@ -29,7 +29,8 @@ const Bets = ({ ids }) => {
       week: parseInt(week),
       year: parseInt(year)
     },
-    pollInterval: 30000
+    requestPolicy: 'network-only',
+    pollInterval: 2000
   });
 
   const { data, fetching, error } = result;
