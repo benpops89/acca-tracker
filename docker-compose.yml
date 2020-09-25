@@ -19,10 +19,6 @@ services:
   graphql:
     build: ./acca-tracker
     command: strawberry server schema
-    environment: 
-      NEO4J_HOST: neo4j
-    ports:
-      - "8000:8000"
     depends_on:
       - neo4j
   neo4j:
@@ -31,9 +27,6 @@ services:
       - neo4j:/data
     environment: 
       NEO4J_AUTH: neo4j/SmellyRhino@89
-    ports:
-      - "7474:7474"
-      - "7687:7687"
   web:
     build: ./web
     ports:

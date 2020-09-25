@@ -4,7 +4,7 @@ import { Router } from '@reach/router';
 import Games from './Games'
 
 const client = createClient({
-  url: 'http://localhost:8000/graphql',
+  url: '/graphql'
 });
 
 const App = () => (
