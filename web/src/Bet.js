@@ -1,11 +1,5 @@
 import React from 'react';
-import styled from '@emotion/styled';
-
-const P = styled.p`
-  background-color: ${props => props.win ? 'rgb(0, 255, 0)': 'red'};
-  color: ${props => props.win ? 'black' : 'white'};
-  text-align: center;
-`
+import { P } from './Grid';
 
 const Bet = ({ bet }) => {
   if (bet) {

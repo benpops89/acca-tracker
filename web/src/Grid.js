@@ -1,32 +1,89 @@
-import styled from '@emotion/styled';
+/**  @jsx jsx*/
+import { jsx } from '@emotion/core';
 
-export const Wrapper = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
+const P = props => {
+  return (
+    <p
+      css={{
+        backgroundColor: props.win ? 'rgba(0, 255, 0)' : 'red',
+        color: props.win ? 'black' : 'white',
+        textAlign: 'center'
+      }}
+      {...props}
+    />
+  )
+}
 
-export const Grid = styled.div`
-  display: grid;
-  column-gap: 50px;
-  grid-auto-columns: 1fr;
-  grid-auto-rows: 1fr;
-`
+const Wrapper = props => {
+  return (
+    <div
+      css={{
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center'
+      }}
+      {...props}
+    />
+  )
+}
 
-export const Column = styled.div`
-  grid-column: ${props => props.col};
-`
+const Grid = props => {
+  return (
+    <div
+      css={{
+        display: 'grid',
+        columnGap: '50px',
+        gridAutoColumns: '1fr',
+        gridAutoRows: '1fr'
+      }}
+      {...props}
+    />
+  )
+}
 
-export const Row = styled.div`
-  place-self: center;
-  text-align: center;
-  margin: 1em 0;
-`
+const Column = props => {
+  return (
+    <div
+      css={{
+        gridColumn: props.col
+      }}
+      {...props}
+    />
+  )
+}
 
-export const Header = styled.h3`
-  place-self: center;
-  text-align: center;
-`
+const Row = props => {
+  return (
+    <div
+      css={{
+        placeSelf: 'center',
+        textAlign: 'center',
+        margin: '1em 0'
+      }}
+      {...props}
+    />
+  )
+}
 
+const Header = props => {
+  return (
+    <h3
+      css={{
+        placeSelf: 'center',
+        textAlign: 'center'
+      }}
+      {...props}
+    />
+  )
+}
+
+export {
+  P,
+  Wrapper,
+  Grid,
+  Column,
+  Row,
+  Header
+};
