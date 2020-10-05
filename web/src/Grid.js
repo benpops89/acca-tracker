@@ -5,8 +5,12 @@ const P = props => {
   return (
     <p
       css={{
-        backgroundColor: props.win ? 'rgba(0, 255, 0)' : 'red',
-        color: props.win ? 'black' : 'white',
+        backgroundColor: props.win > 0 
+          ? 'rgba(0, 255, 0)'
+          : props.win < -15
+          ? 'red'
+          : 'rgba(255, 165, 0)',
+        color: props.win < -15 ? 'white' : 'black',
         textAlign: 'center'
       }}
       {...props}
