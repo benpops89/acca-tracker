@@ -5,7 +5,6 @@ Scrape data with selenium
 import sys
 from datetime import datetime, timedelta
 from dateutil.relativedelta import relativedelta
-import re
 import time
 
 from selenium import webdriver
@@ -106,7 +105,6 @@ class SkyBet:
         if not nfl_accas:
             print('No accas available')
 
-        re_handicap = re.compile(r'\((.*)\)')
         accas = []
         for acca in nfl_accas:
             bets = []
@@ -114,13 +112,12 @@ class SkyBet:
                 bet_id = acca['betId']
                 for selection in acca['bet']['group']:
                     for bet in selection['selections']:
-                        bet_type = bet['marketType']
-                        if bet_type == 'Handicap':
-                            spread = float(re_handicap.search(
-                                bet['handicap']
-                            ).group(1))
+                        if bet.get('handicap', False):
+                            spread = bet['handicap'][1:-1]
+                            bet_type = 'Handicap'
                         else:
                             spread = 0.0
+                            bet_type = 'Match Winner'
 
                         home, visitor = bet['event'].split(' v ')
                         bets.append({
