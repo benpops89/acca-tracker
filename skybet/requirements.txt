@@ -1,5 +1,5 @@
 Flask==1.1.1
-redis==3.3.7
+redis==4.4.4
 requests==2.22
 rq==1.1.0
 selenium==3.141.0
